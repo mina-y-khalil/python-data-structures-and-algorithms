@@ -1,0 +1,20 @@
+# Data Structures and Algorithms Notes
+
+## 1. Importance of Data Structures and Algorithms
+
+- The main importance is **efficiency** of your code, especially the **speed of operations** such as adding or removing elements.
+- Helps decide how to store your data effectively. For example:
+  - **Linked List** vs **Doubly Linked List**: Knowing the structure helps you remove the last element efficiently.
+
+## 2. Classes
+
+- **Classes are essential** because most data structures are implemented as classes.
+- Example: A linked list itself is implemented as a class with its own methods and properties.
+
+## 3. Pointers
+
+- Pointers track **where important variables like head and tail are located**.
+- **Head and Tail are different from the nodes themselves**:
+  - `head`: Points to the first node in the list.
+  - `tail`: Points to the last node in the list.
+  - Nodes contain the data and reference(s) to other nodes, but head/tail just point to them.
