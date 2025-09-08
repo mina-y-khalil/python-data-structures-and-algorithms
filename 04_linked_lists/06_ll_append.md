@@ -20,26 +20,38 @@ class Node:
 
 # LinkedList class to manage nodes
 class LinkedList:
-    def __init__(self, value):
-        new_node = Node(value)
-        self.head = new_node
-        self.tail = new_node
-        self.length = 1
+    def __init__(self, value=None):
+        if value is not None:
+            new_node = Node(value)
+            self.head = new_node
+            self.tail = new_node
+            self.length = 1
+        else:
+            self.head = None
+            self.tail = None
+            self.length = 0
 
     # Append a new node at the end
     def append(self, value):
         new_node = Node(value)
-        if self.length == 0:
-            # If list is empty, head and tail both point to the new node
+
+        if self.head is None:       # empty list
             self.head = new_node
             self.tail = new_node
-        else:
-            # Link the last node to the new node
+        else:                       # non-empty list
             self.tail.next = new_node
-            # Update the tail to the new node
             self.tail = new_node
+
         self.length += 1
         return True
+
+
+# Function to print all values in the linked list
+def print_list(linked_list):
+    temp = linked_list.head
+    while temp:
+        print(temp.value)
+        temp = temp.next
 
 
 # Example usage
@@ -48,19 +60,15 @@ my_linked_list.append(3)
 my_linked_list.append(23)
 my_linked_list.append(7)
 
-# Function to print the list values
-def print_list(linked_list):
-    temp = linked_list.head
-    while temp:
-        print(temp.value)
-        temp = temp.next
-
 print_list(my_linked_list)
 ```
 
-**Key Points**
+---
+
+## Key Points
 
 1. `Node` stores `value` and `next` pointer.
 2. `LinkedList` keeps track of `head`, `tail`, and `length`.
 3. Appending updates the `tail` pointer correctly.
 4. Works for both **empty** and **non-empty** lists.
+5. Always increment `length` when adding a new node.
